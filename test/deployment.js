@@ -7,40 +7,40 @@ var utils = require("../").utils;
 var apiKey = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
 var appName = "PACKAGE_JSON_APP_NAME";
 
-utils.getGitHeadSHA(function(headCommit){
 
-  console.log(headCommit);
+accountApi.get({ apiKey: apiKey }, function(err, accounts) {
+  if (err) {
+    console.log("ERROR: " + err);
+    return;
+  }
 
-  accountApi.get({ apiKey: apiKey }, function(err, accounts) {
+  // Got the accounts
+  console.log(accounts);
+
+  appsApi.get({apiKey: apiKey, appName: appName}, function(err, app) {
     if (err) {
       console.log("ERROR: " + err);
       return;
     }
 
-    // Got the accounts
-    console.log(accounts);
+    // Got the app info
+    console.log(app);
 
-    appsApi.get({apiKey: apiKey, appName: appName}, function(err, app) {
+    deploymentsApi.get({
+      apiKey: apiKey,
+      app: app/*,
+      git: headCommit*/
+    }, function(err, deployment) {
       if (err) {
         console.log("ERROR: " + err);
         return;
       }
 
-      // Got the app info
-      console.log(app);
-
-      deploymentsApi.get({apiKey: apiKey, app: app, git: headCommit}, function(err, deployment) {
-        if (err) {
-          console.log("ERROR: " + err);
-          return;
-        }
-
-        // Submitted and returned the deplyment info to new relic
-        console.log(deployment);
-      });
-
+      // Submitted and returned the deplyment info to new relic
+      console.log(deployment);
     });
 
   });
 
 });
+
