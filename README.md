@@ -3,17 +3,17 @@ node-newrelic-api
 [![Travis](https://travis-ci.org/marcellodesales/node-newrelic-api.svg)](https://travis-ci.org/marcellodesales/node-newrelic-api)
 [![Dependency Status](https://david-dm.org/marcellodesales/node-newrelic-api.svg)](https://david-dm.org/marcellodesales/node-newrelic-api)
 
-Async and Sync Node.js bindings for the New Relic XML and RESTFul APIs into a single one.
+Node.js bindings for the New Relic XML and RESTFul APIs into a single one.
 
 [![NPM](https://nodei.co/npm/node-newrelic-api.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/node-newrelic-api/)
 
 Description
 ========
 
-New Relic provides some of their APIs through XML or RESTful JSON endpoints, but they use different hosts, methods. This is a consolidated API that intends to provide bindings to their Public APIs in Node.js using Async and Sync methods.
+New Relic provides some of their APIs through XML or RESTful JSON endpoints, but they use different hosts, methods. 
+This is a consolidated API that intends to provide bindings to their Public APIs in Node.js.
 
 * Async: Useful when implementing anything in the event loop for your app.
-* Sync: Useful for bootstrap APIs that needs to be executed sequentially.
 
 The APIs added per version are as follows:
 
@@ -25,13 +25,11 @@ The APIs added per version are as follows:
 |         | * *Application*: Retrieve application information; (JSON V2 API)
 |         | * *Deployments*: Submits application deployment information. (XML V1 API)
 
-By default, APIs are async, and the optional sync method will include the suffix "Sync".
-
 Installation
 =========
 
 ```
-npm install --save node-newrelic-api
+npm install node-newrelic-api --save
 ```
 
 Accounts API
@@ -56,19 +54,6 @@ Retrieves the account information based on the license information.
    * @param {object} AccountInfo Is the object information translated from XML V1 API to JSON.
    */
   function callback(err, account) { }
-```
-
-Accounts.getSync(opts) := AccountInfo
------------
-
-The blocking version of the accounts info.
-
-```js
-
-  opts: {
-    appKey {string} // The license key provided by New Relic.
-  }
-
 ```
 
 Sample
@@ -121,18 +106,6 @@ Retrieves the application information based on the license information and the n
   function callback(err, app) { }
 ```
 
-Applications.getSync(opts) := ApplicationInfo
------------
-
-The blocking version of the application info.
-
-```js
-  opts: {
-    appKey {string}, // The license key provided by New Relic.
-    appName: {string} // The name of the application that you have deployed.
-  }
-```
-
 Sample
 ------
 
@@ -174,19 +147,6 @@ Retrieves the deployment information based on the license information and the na
   function callback(err, deployment) { }
 ```
 
-Deployments.getSync(opts) := DeploymentInfo
------------
-
-The blocking version of the deployments API.
-
-```js
-  opts: {
-    appKey {string}, // The license key provided by New Relic.
-    appName: {string} // The name of the application that you have deployed.
-    git: 
-  }
-```
-
 Sample
 ------
 
@@ -215,12 +175,10 @@ npm install --save node-newrelic-api
 Use
 =========
 
-The test directory contains examples on how to call the API using the Async and Sync modes. You will need to use:
+The test directory contains examples on how to call the API. You will need to use:
 
 * `LICENSE_KEY`: Your license Key provided by your account.
 * `App Name`: Usually the name of the app based on the package.json.
-
-Some examples of the output of the current version include:
 
 Contributing
 ==============
