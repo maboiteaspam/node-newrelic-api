@@ -3,7 +3,6 @@
 "use strict";
 
 var restify = require("restify");
-var deasync = require("deasync");
 var xml2js = require("xml2js");
 var xmlParser = new xml2js.Parser();
 
@@ -84,10 +83,3 @@ module.exports.get = function(opt, callback) {
   });
 };
 
-/**
- * @return {object} The deployment information in synchrounous mode.
- */
-module.exports.getSync = function(opts) {
-  var getSync = deasync(this.get);
-  return getSync(opts);
-};

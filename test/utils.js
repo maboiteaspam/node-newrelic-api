@@ -4,6 +4,7 @@ var hostname = utils.getHostname();
 
 console.log("Your Hostname: " + hostname);
 
-var headCommitSha = utils.getGitHeadSHA();
+utils.getGitHeadSHA(function(headCommitSha){
+  console.log("Head SHA: " + JSON.stringify(headCommitSha));
+});
 
-console.log("Head SHA: " + JSON.stringify(headCommitSha));
