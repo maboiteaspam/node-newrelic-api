@@ -1,40 +1,40 @@
 /** @module Accounts */
 
-"use strict";
+'use strict';
 
-var restify = require("restify");
-var xml2js = require("xml2js");
+var restify = require('restify');
+var xml2js = require('xml2js');
 var xmlParser = new xml2js.Parser();
 
-var utils = require("../").utils;
+var utils = require('../').utils;
 
 /**
- * Based on https://rpm.newrelic.com/accounts/xxxxxx/applications/yyyyyy/deployments/instructions",
+ * Based on https://rpm.newrelic.com/accounts/xxxxxx/applications/yyyyyy/deployments/instructions',
  * we can submit information about deployments by posting a request to the server using the module.
  * The API is described at
  * https://docs.newrelic.com/docs/apm/apis/new-relic-rest-api-v1/getting-started-new-relic-rest-api-v1#account_id
 */
-module.exports.get = function(opt, callback) {
+module.exports.get = function (opt, callback) {
   // client HTTP headers
   var headers = {};
-  headers["x-api-key"] = opt.apiKey;
+  headers['x-api-key'] = opt.apiKey;
 
   // HTTP client object
   var client = restify.createStringClient({
-    url: "https://api.newrelic.com",
+    url: 'https://api.newrelic.com',
     headers: headers
   });
 
   // The request opjects
-  client.get({path: "/api/v1/accounts.xml" } , function(err, req, res, accountXml) {
+  client.get({path: '/api/v1/accounts.xml' }, function (err, req, res, accountXml) {
     if (err) {
-      throw new Error("API ERROR:" + err);
+      throw new Error('API ERROR:' + err);
     }
     // Close the connection with the client.
     client.close();
 
     // Parse the xml output from the server.
-    xmlParser.parseString(accountXml, function(err, accountJson) {
+    xmlParser.parseString(accountXml, function (err, accountJson) {
       if (err) {
         return callback(err, null);
       }
