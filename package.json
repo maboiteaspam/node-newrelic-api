@@ -1,26 +1,21 @@
 {
-  "name": "node-newrelic-api",
+  "name": "node-oknewrelic-api",
   "version": "0.1.3",
-  "description": "Async and Sync Node.js bindings for the New Relic XML and RESTFul APIs into a single one.",
+  "description": "Node.js bindings for the New Relic XML and RESTFul APIs into a single one.",
   "keywords": [
     "newrelic",
     "monitoring",
     "api",
     "client"
   ],
-  "homepage": "https://github.com/marcellodesales/node-newrelic-api",
+  "homepage": "https://github.com/maboiteaspam/node-newrelic-api",
   "bugs": {
-    "url": "https://github.com/marcellodesales/node-newrelic-api/issues"
-  },
-  "author": {
-    "name": "Marcello de Sales",
-    "email": "Marcello_deSales@intuit.com",
-    "url": "https://github.com/marcellodesales"
+    "url": "https://github.com/maboiteaspam/node-newrelic-api/issues"
   },
   "main": "./index.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:marcellodesales/node-newrelic-api.git"
+    "url": "git@github.com:maboiteaspam/node-newrelic-api.git"
   },
   "dependencies": {
     "moment-timezone": "^0.2.5",
@@ -29,6 +24,15 @@
   },
   "devDependencies": {
   },
+  "contributors": [
+    { "name" : "Marcello de Sales"
+    , "email" : "Marcello_deSales@intuit.com"
+    , "url" : "https://github.com/marcellodesales"
+    },
+    { "name" : "maboiteaspam"
+    , "url" : "https://github.com/maboiteaspam"
+    }
+  ],
   "licenses": [
     {
       "type": "MIT"
