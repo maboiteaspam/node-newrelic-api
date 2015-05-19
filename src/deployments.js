@@ -7,7 +7,6 @@ var xml2js = require("xml2js");
 var xmlParser = new xml2js.Parser();
 
 var utils = require("../").utils;
-var cache = require("../").deploymentsCache;
 
 /**
  * Based on https://rpm.newrelic.com/accounts/xxxxx/applications/yyyyyy/deployments/instructions",
@@ -36,11 +35,6 @@ module.exports.get = function(opt, callback) {
   formData["deployment[revision]"] = opt.git.sha;
   formData["deployment[changelog]"] = opt.git.msg;
   formData["deployment[user]"] = process.env.USER;
-
-  if (!cache.isCacheStale(opt.app.name)) {
-    var deployRecord = cache.getCachedDeployment(opt.app.name);
-    callback(null, deployRecord);
-  }
 
   // The request opjects
   client.post("/deployments.xml", formData, function(err, req, res, deploymentXml) {

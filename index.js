@@ -5,4 +5,3 @@ module.exports.deploymentsApi = require("./src/deployments");
 
 // Libraries
 module.exports.utils = require("./lib/utils");
-module.exports.deploymentsCache = require("./lib/deployment_cache");
