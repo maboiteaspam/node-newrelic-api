@@ -1,7 +1,7 @@
 node-newrelic-api
 =========================
 [![Travis](https://travis-ci.org/marcellodesales/node-newrelic-api.svg)](https://travis-ci.org/marcellodesales/node-newrelic-api)
-[![Dependency Status](https://david-dm.org/marcellodesales/node-newrelic-api.svg)](https://david-dm.org/marcellodesales/node-newrelic-api)
+[![Dependency Status](https://david-dm.org/maboiteaspam/node-newrelic-api.svg)](https://david-dm.org/maboiteaspam/node-newrelic-api)
 
 Node.js bindings for the New Relic XML and RESTFul APIs into a single one.
 
