@@ -1,11 +1,11 @@
-node-newrelic-api
+node-newrelic-webapi
 =========================
-[![Travis](https://travis-ci.org/marcellodesales/node-newrelic-api.svg)](https://travis-ci.org/marcellodesales/node-newrelic-api)
-[![Dependency Status](https://david-dm.org/maboiteaspam/node-newrelic-api.svg)](https://david-dm.org/maboiteaspam/node-newrelic-api)
+[![Travis](https://travis-ci.org/marcellodesales/node-newrelic-webapi.svg)](https://travis-ci.org/marcellodesales/node-newrelic-webapi)
+[![Dependency Status](https://david-dm.org/maboiteaspam/node-newrelic-webapi.svg)](https://david-dm.org/maboiteaspam/node-newrelic-webapi)
 
 Node.js bindings for the New Relic XML and RESTFul APIs into a single one.
 
-[![NPM](https://nodei.co/npm/node-newrelic-api.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/node-newrelic-api/)
+[![NPM](https://nodei.co/npm/node-newrelic-webapi.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/node-newrelic-webapi/)
 
 Description
 ========
@@ -29,7 +29,7 @@ Installation
 =========
 
 ```
-npm install node-newrelic-api --save
+npm install node-newrelic-webapi --save
 ```
 
 Accounts API
@@ -169,7 +169,7 @@ Installation
 =========
 
 ```
-npm install --save node-newrelic-api
+npm install --save node-newrelic-webapi
 ```
 
 Use
@@ -179,16 +179,3 @@ The test directory contains examples on how to call the API. You will need to us
 
 * `LICENSE_KEY`: Your license Key provided by your account.
 * `App Name`: Usually the name of the app based on the package.json.
-
-Contributing
-==============
-
-We use the GitFlow branching model http://nvie.com/posts/a-successful-git-branching-model/.
-
-1. Fork it
-2. Create your feature branch (`git checkout -b feature/issue-444-Add-Rest-APIs origin/master --track`)
- * Adding the Jira ticket ID helps communicating where this feature is coming from.
-3. Commit your changes (`git commit -am 'Fix #444: Add support to REST-APIs'`)
- * Adding "fix #444" will trigger a link to the GitHub issue #444.
-4. Push to the branch (`git push feature/issue-444-Add-Rest-APIS`)
-5. Create new Pull Request as indicated by this page or your forked repo.

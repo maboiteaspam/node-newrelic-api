@@ -1,5 +1,5 @@
 {
-  "name": "node-oknewrelic-api",
+  "name": "node-newrelic-webapi",
   "version": "0.1.3",
   "description": "Node.js bindings for the New Relic XML and RESTFul APIs into a single one.",
   "keywords": [
@@ -8,14 +8,14 @@
     "api",
     "client"
   ],
-  "homepage": "https://github.com/maboiteaspam/node-newrelic-api",
+  "homepage": "https://github.com/maboiteaspam/node-newrelic-webapi",
   "bugs": {
-    "url": "https://github.com/maboiteaspam/node-newrelic-api/issues"
+    "url": "https://github.com/maboiteaspam/node-newrelic-webapi/issues"
   },
   "main": "./index.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:maboiteaspam/node-newrelic-api.git"
+    "url": "git@github.com:maboiteaspam/node-newrelic-webapi.git"
   },
   "dependencies": {
     "moment-timezone": "^0.2.5",

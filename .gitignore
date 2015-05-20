@@ -2,3 +2,5 @@ node_modules/
 docs/
 logs/
 npm-shrinkwrap.json
+
+.local.json
